@@ -4,7 +4,11 @@ A demo project designed to showcase [CIDER](https://www.cider.mx).
 
 ## Usage
 
-Open some file in the project, start CIDER and have fun!
+1. Clone the project locally.
+2. Visit the `hard-cider.core` namespace.
+3. Start CIDER with `C-c C-x j` (`cider-jack-in-clj`)
+4. Follow along the examples in the `hard-cider.core` namespace.
+5. Enjoy some (hard) cider and have plenty of fun! ;-)
 
 ## License
 

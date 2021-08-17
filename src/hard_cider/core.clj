@@ -1,17 +1,24 @@
-(ns hard-cider.core)
+(ns hard-cider.core
+  "A bunch of simple Clojure examples,
+  showcasing various CIDER features.")
 
-;; basic evaluation examples
-(+ 1 2 3)
+;;; basic evaluation examples
+;;
+;; C-x C-e
+;; C-c C-p
+(+ 1 2 3 4)
 
 (range 1 20)
-
+;; => (1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19)
 (reduce + (range 1 100))
 
 (.toUpperCase "bozhidar")
 
-;; Let's define some functions!
+;;; Let's define some functions!
+;;
+;; C-M-x / C-c C-c
 (defn hello-world []
-  "Hello, world!")
+  "Hello, world!!!")
 
 (hello-world)
 
@@ -23,7 +30,20 @@
 (greeting "Joan")
 (greeting "Bozhidar")
 
-;; tail recursion
+;;; Show image in the REPL
+;;
+;; Note that you can't have shell expansion characters in the URL
+;; e.g. "~/kitty.jpg" won't work, as there's no shell to expand it
+(clojure.java.io/file "/home/bozhidar/kitty.jpg")
+
+;; eval up to point and eval in context
+(let [x 1
+      y 10]
+    (+ x y)
+    (* x y)
+    (- y x))
+
+;;; Tracing, debugging and profiling
 (defn fact-rec [n]
   (if (= n 1)
     1
@@ -32,8 +52,8 @@
 (defn fact-iter [n]
   (reduce *' (range 1 (inc n))))
 
-(fact-rec 5)
-(fact-iter 5)
+(fact-rec 10)
+(fact-iter 10)
 
 ;; the output from those expressions in end
 ;; in your REPL buffer
@@ -57,5 +77,7 @@
 (fibo-rec 10)
 (fibo-iter 10)
 
+;; simplest profiling
+;; can we do better?
 (time (fibo-rec 30))
 (time (fibo-iter 30))
