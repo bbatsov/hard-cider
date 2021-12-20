@@ -1,6 +1,8 @@
 (ns hard-cider.core
   "A bunch of simple Clojure examples,
-  showcasing various CIDER features.")
+  showcasing various CIDER features."
+  (:import
+   (com.google.common.math IntMath)))
 
 ;;; basic evaluation examples
 ;;
@@ -13,6 +15,8 @@
 (reduce + (range 1 100))
 
 (.toUpperCase "bozhidar")
+
+(IntMath/gcd 400 60)
 
 ;;; Let's define some functions!
 ;;
