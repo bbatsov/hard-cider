@@ -8,13 +8,22 @@
 ;;
 ;; C-x C-e
 ;; C-c C-p
-(println "Hello, world!")
-(println "Emacs is the One True Editor!")
+"Hello, world!"
+42
+[1 2 3 4]
+{:name "Bruce", :alias "Batman"}
+(str "Hello, " "world!")
 (+ 1 2 3 4)
 
 (range 1 20)
 ;; => (1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19)
 (reduce + (range 1 100))
+
+;;; Output
+;;
+;; Evaluation output will end up in the REPL buffer.
+(println "Hello, world!")
+(println "Emacs is the One True Editor!")
 
 ;; Java Interop
 ;;
