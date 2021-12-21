@@ -8,14 +8,21 @@
 ;;
 ;; C-x C-e
 ;; C-c C-p
+(println "Hello, world!")
+(println "Emacs is the One True Editor!")
 (+ 1 2 3 4)
 
 (range 1 20)
 ;; => (1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19)
 (reduce + (range 1 100))
 
+;; Java Interop
+;;
+;; commands like C-c C-d and M-. work for Java code as well
+;; provided the Java sources are on the classpath
 (.toUpperCase "bozhidar")
 
+;; external Java library
 (IntMath/gcd 400 60)
 
 ;;; Let's define some functions!
